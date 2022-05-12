@@ -110,7 +110,7 @@ void free_order(order_t *order) {
  */
 void to_string_helper(char tmp_str[], int tmp_str_size, order_t *order) {
     assert(order != NULL);
-    snprintf(tmp_str, tmp_str_size, "%c,%s,%c,%c,%d,%lld,%lld,%d",
+    snprintf(tmp_str, tmp_str_size, "%c,%s,%c,%c,%d,%lld,%lld @ %d",
              order->venue,
              order->ticker,
              order->type,
