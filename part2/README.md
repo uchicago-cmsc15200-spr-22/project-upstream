@@ -1,56 +1,36 @@
 CS 152, Spring 2022
 Stock Exchange Project - Part 2
+Test Files
 
-This directory contains the files for the project
+This directory contains the orders, times, and expected results for
+the autograder tests for Part 1.
 
-Makefile: file to be used with make.  Run:
-  make - to compile your code and generate an executable
-    for the basic testing framework and for the single automated test
+Each test has three files (TN is the test number).
 
-  make student_test_exchange - to compile your code and generate an
-    executable for the basic testing framework and for the single
-    automated test
+     testTN_orders.csv: -- the order strings for the test, one order string per line.
 
-  make vg - to compile your code with student_test_exchange then, if
-    successful run valgrind
+     testTN_times.csv -- the times used for the orders.  With the
+       exception of test 7, the times are in increasing order.  Test 7
+       contains a delayed order.  It should not be used to test
+       simulate.c, since we specified increasing time for
+       simulate.c.  You are not expected to use this file. It is
+       included only for informational purposes.
 
-  make simulate - to compile generate the simulate executable.
+       The first line in the file is the number of times.  The rest of
+       the lines are the actual times used.
 
-  make test_exchange - to compile your code and generate an
-    executable for the single automated test
+      testTN_actions_expected.csv -- the expected action report results
+       for the orders.  Each line contains an action. The first value
+       in each line is the line number of the corresponding order. For
+       example, this action from test0_actions_expected.csv
+       corresponds to the first order (order 0) in test0_orders.csv.
 
-  make clean - remove generated files (a good thing to do before you
-    add/commit/push your code).
+           0,BOOKED_SELL,4000,550000,100
 
-########## You must modify these files ########## 
+Test 0 through 11 are the tests we used for the autograder.  Test 12
+is the example from the writeup from Part 2.
 
-book.c: C file for the book data structure implementation
-book.h: Header file for the book data structure interface
-
-exchange.c: C file for the exchange data structure implementation
-exchange.h: Header file for the exchange data structure interface
-
-simulate.c: C file for simuating the exchange using orders from a file.
-
-##########  You can and should modify this file ########## 
-
-student_test_exchange.c: basic testing framework
-
-##########  You can modify these files, if you like ########## 
-
-order.c: C file for the order data structure implementation
-order.h: Header file for the order data structure interface
+       
 
 
-##########  Do NOT modify these files ########## 
 
-test_exchange.c: sample automated test (the hidden autograder will
-  have more tests)
-
-action_report.c: C file for the action report data structure implementation
-action_report.h: Header file for the action report data structure interface
-
-util.c: C file with some useful utility functions
-util.h: C header file for the useful utility functions
-
-README.md: this file
