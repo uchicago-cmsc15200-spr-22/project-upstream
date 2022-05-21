@@ -13,8 +13,9 @@ Each test has three files (TN is the test number).
        exception of test 7, the times are in increasing order.  Test 7
        contains a delayed order.  It should not be used to test
        simulate.c, since we specified increasing time for
-       `simulate.c`.  You are not expected to use this file. It is
-       included only for informational purposes.
+       `simulate.c`.  test7_actions_expected.csv contains the
+       results that you can expect to get using simulate.  test7_actions_expected_using_times.csv
+       results you would expect using the times in test7_times.csv.
 
        The first line in the file is the number of times.  The rest of
        the lines are the actual times used.
